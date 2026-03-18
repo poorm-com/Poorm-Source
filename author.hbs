@@ -3,7 +3,7 @@
 
 <main class="gh-main gh-outer">
 
-    {{#author}}
+    {{#primary_author}}
         <section class="gh-archive{{#if @custom.show_publication_info_sidebar}} has-sidebar{{/if}} gh-inner">
             <div class="gh-archive-inner">
                 <div class="gh-archive-wrapper">
@@ -57,7 +57,7 @@
                 {{/if}}
             </div>
         </section>
-    {{/author}}
+    {{/primary_author}}
     
     {{> "components/post-list" feed="archive" postFeedStyle=@custom.post_feed_style showTitle=false showSidebar=@custom.show_publication_info_sidebar}}
 

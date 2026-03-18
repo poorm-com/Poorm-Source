@@ -1,0 +1,52 @@
+{{!< default}}
+
+{{#post}}
+
+<main class="gh-main gh-series">
+    <div class="gh-series-header gh-canvas">
+        <h1 class="gh-series-title is-title">{{title}}</h1>
+        {{#if custom_excerpt}}
+            <p class="gh-series-description is-body">{{custom_excerpt}}</p>
+        {{/if}}
+    </div>
+
+    {{#if html}}
+        <section class="gh-content gh-canvas is-body">
+            {{content}}
+        </section>
+    {{/if}}
+
+    <div class="gh-canvas">
+        <div class="gh-series-feed">
+            {{#get "tags" filter="visibility:public+slug:-portfolio" limit="100" order="name asc"}}
+                {{#foreach tags}}
+                    {{#get "posts" filter="tag:{{slug}}+tag:hash-series" include="tags" limit="100" order="published_at asc"}}
+                        {{#if posts}}
+                            <section class="gh-series-group">
+                                <a class="gh-series-group-header" href="{{../url}}">
+                                    <h2 class="gh-series-group-title is-title">{{../name}}</h2>
+                                    <span class="gh-series-group-count">{{pagination.total}} posts</span>
+                                </a>
+                                {{#if ../description}}
+                                    <p class="gh-series-group-description is-body">{{../description}}</p>
+                                {{/if}}
+                                <ol class="gh-series-posts">
+                                    {{#foreach posts}}
+                                        <li class="gh-series-post">
+                                            <a class="gh-series-post-link" href="{{url}}">
+                                                <span class="gh-series-post-title">{{title}}</span>
+                                                <time class="gh-series-post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY.MM.DD"}}</time>
+                                            </a>
+                                        </li>
+                                    {{/foreach}}
+                                </ol>
+                            </section>
+                        {{/if}}
+                    {{/get}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</main>
+
+{{/post}}
