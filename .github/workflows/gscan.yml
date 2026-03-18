@@ -19,8 +19,5 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install gscan
-        run: npm install -g gscan@latest
-
       - name: Run gscan
         run: npx gscan . --fatal
