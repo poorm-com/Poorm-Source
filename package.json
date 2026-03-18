@@ -1,8 +1,7 @@
 {
-    "name": "source",
-    "description": "A default theme for the Ghost publishing platform",
-    "demo": "https://source.ghost.io",
-    "version": "1.5.2",
+    "name": "poorm-source",
+    "description": "A custom theme based on Ghost Source",
+    "version": "1.0.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -42,7 +41,7 @@
     "contributors": "https://github.com/TryGhost/Source/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
-        "@tryghost/theme-translations": "~0.0.11",
+        "@tryghost/theme-translations": "^0.0.11",
         "autoprefixer": "10.4.24",
         "beeper": "2.1.0",
         "cssnano": "7.1.2",
