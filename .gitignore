@@ -1,28 +1,41 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
 b-cov
-*.seed
+
+# Logs
 *.log
+npm-debug.log*
+yarn-error.log
+
+# Data / artifacts
+*.seed
 *.csv
 *.dat
 *.out
 *.pid
 *.gz
-
 pids
 logs
 results
 
-npm-debug.log
-node_modules
-package-lock.json
+# OS files
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
 
-.idea/*
+# Editor
+.idea/
 *.iml
+.vscode/
+*.swp
+*.swo
 projectFilesBackup
 
-.DS_Store
-
-dist/
-
+# Project
 config.json
 changelog.md
 changelog.md.bk

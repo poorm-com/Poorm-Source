@@ -1,0 +1,15 @@
+# for development
+# docker compose up -d
+# docker compose down
+
+services:
+  ghost:
+    image: ghost:latest
+    ports:
+      - "2368:2368"
+    environment:
+      - url=http://localhost:2368
+      - NODE_ENV=development
+    volumes:
+      - ../:/var/lib/ghost/content/themes/Poorm-Source
+    restart: always
