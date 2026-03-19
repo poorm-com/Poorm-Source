@@ -15,6 +15,16 @@
                     {{#if lazyLoad}}loading="lazy"{{/if}}
                 >
             </figure>
+        {{else}}
+            {{#if primary_tag.feature_image}}
+                <figure class="gh-card-image">
+                    <img
+                        src="{{img_url primary_tag.feature_image size="m"}}"
+                        alt="{{primary_tag.name}}"
+                        {{#if lazyLoad}}loading="lazy"{{/if}}
+                    >
+                </figure>
+            {{/if}}
         {{/if}}
         <div class="gh-card-wrapper">
             {{#if primary_tag}}
