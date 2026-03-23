@@ -1,68 +1,104 @@
-# Source
+# Poorm-Source
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Source! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Source/releases) page.
+A custom [Ghost](https://ghost.org/) theme based on [Source](https://github.com/TryGhost/Source). Tailored for a clean, content-focused blog with portfolio and series support.
 
-&nbsp;
+## Features
 
-# First time using a Ghost theme?
+### Custom Page Templates
+- **Portfolio** (`page-portfolio.hbs`) — Grid-style project showcase filtered by `portfolio` tag
+- **Series** (`page-series.hbs`) — Grouped post series organized by tag
 
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
+### Floating Table of Contents
+- Auto-generated from `h2`/`h3` headings in post content
+- Sticky sidebar that follows scroll on the right side
+- Active section highlight as you read
+- Hidden on screens below 1200px for mobile readability
 
-This theme has lots of code comments to help explain what's going on just by reading the code. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://ghost.org/docs/themes/) which explains every possible Handlebars helper and template.
+### Tags Section on Homepage
+- Pill-style tag buttons ordered by post count (up to 50)
+- Toggleable via Ghost Admin: **Settings > Design > Homepage > Show tags section**
 
-**The main files are:**
+### Tag Image Fallback
+- Post cards without a feature image automatically display the primary tag's image
+- Falls back gracefully to no image if neither exists
 
-- `default.hbs` - The parent template file, which includes your global header/footer
-- `home.hbs` - The homepage
-- `index.hbs` - The main template to generate a list of posts
-- `post.hbs` - The template used to render individual posts
-- `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives, eg. "all posts tagged with `news`"
-- `author.hbs` - Used for author archives, eg. "all posts written by Jamie"
+### Post Card Images
+- Images displayed fully (no cropping) with white background fill
+- Works well with SVG/PNG assets
 
-One neat trick is that you can also create custom one-off templates by adding the slug of a page to a template file. For example:
+### Feature Image Sizing
+- Resized to 80% of content width, centered
+- Small images scale up to fit the container
 
-- `page-about.hbs` - Custom template for an `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
+### Customizable Logo Color
+- Adjustable via Ghost Admin: **Settings > Design > Site-wide > Logo color**
+- Default: `#888888`
 
+### Other Changes
+- Removed subscribe CTA banner from homepage
+- Updated `author.hbs` to use `primary_author` helper
+- Portfolio posts excluded from related articles
 
-# Development
+## File Structure
 
-Source styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+| File | Description |
+|------|-------------|
+| `default.hbs` | Base template with global header/footer |
+| `home.hbs` | Homepage with header, tags section, and post list |
+| `index.hbs` | Paginated post list |
+| `post.hbs` | Individual post with floating TOC |
+| `page.hbs` | Individual pages |
+| `page-portfolio.hbs` | Portfolio page template |
+| `page-series.hbs` | Series page template |
+| `tag.hbs` | Tag archive |
+| `author.hbs` | Author archive |
+
+Custom one-off templates can be created by slug:
+- `page-about.hbs` → `/about/`
+- `tag-news.hbs` → `/tag/news/`
+- `author-ali.hbs` → `/author/ali/`
+
+## Development
+
+Requires [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/).
 
 ```bash
-# install dependencies
+# Install dependencies
 yarn install
 
-# run development server
+# Run development server with live reload
 yarn dev
-```
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
-
-The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
-
-```bash
-# create .zip file
+# Build assets
 yarn zip
 ```
 
-# PostCSS Features Used
+Edit files in `/assets/css/` — they compile to `/assets/built/` automatically via Gulp/PostCSS.
 
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
+### Docker
 
+A Docker Compose file is included for local Ghost development:
 
-# SVG Icons
+```bash
+cd docker
+docker compose up -d
+```
 
-Source uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
+This mounts the theme into a Ghost container at `http://localhost:2368`.
 
-You can add your own SVG icons in the same manner.
+## Icons
 
-# Translations
+Inline SVG icons are in `/partials/icons/`. Use them via Handlebars partials:
 
-Please see [@TryGhost/Themes/theme-translations/README.md](https://github.com/TryGhost/Themes/blob/main/packages/theme-translations/README.md) for how to build, edit, or contribute translations.
+```handlebars
+{{> "icons/tag"}}
+```
 
-# Copyright & License
+## Translations
 
-Copyright (c) 2013-2026 Ghost Foundation - Released under the [MIT license](LICENSE).
+See [@TryGhost/Themes/theme-translations](https://github.com/TryGhost/Themes/blob/main/packages/theme-translations/README.md) for translation instructions.
+
+## License
+
+Based on [Ghost Source](https://github.com/TryGhost/Source) — Copyright (c) 2013-2026 Ghost Foundation.
+Released under the [MIT license](LICENSE).
