@@ -1,7 +1,7 @@
 {{#get "tags" filter="visibility:public" limit="50" order="count.posts desc" include="count.posts"}}
     {{#if tags}}
-        <section class="gh-tags gh-outer">
-            <div class="gh-tags-inner gh-inner">
+        <section class="gh-container gh-tags gh-outer">
+            <div class="gh-container-inner gh-inner">
                 <h2 class="gh-container-title">Tags</h2>
                 <div class="gh-tags-feed">
                     {{#foreach tags}}

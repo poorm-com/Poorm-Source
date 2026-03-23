@@ -1410,13 +1410,17 @@ Search                         LOGO                    Login Subscribe
 /* ---------------------------------------------------------- */
 
 .gh-tags {
-    padding: 32px 0;
+    margin-top: 0;
 }
 
-.gh-tags-inner {
-    max-width: var(--container-width);
-    margin: 0 auto;
+.gh-container.gh-tags .gh-container-title {
+    display: block !important;
 }
+
+.gh-tags-feed {
+    grid-column: 1 / -1;
+}
+
 
 .gh-tags-feed {
     display: flex;
@@ -1473,9 +1477,6 @@ Search                         LOGO                    Login Subscribe
 }
 
 @media (max-width: 768px) {
-    .gh-tags {
-        padding: 24px 0;
-    }
 
     .gh-tags-feed {
         gap: 8px;

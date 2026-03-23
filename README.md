@@ -13,20 +13,24 @@ A custom [Ghost](https://ghost.org/) theme based on [Source](https://github.com/
 - Sticky sidebar that follows scroll on the right side
 - Active section highlight as you read
 - Hidden on screens below 1200px for mobile readability
+![Floating Table of Contents screenshot](assets/screenshots/toc.gif)
 
 ### Tags Section on Homepage
 - Pill-style tag buttons ordered by post count (up to 50)
 - Toggleable via Ghost Admin: **Settings > Design > Homepage > Show tags section**
+![Tags Section screenshot](assets/screenshots/tags-section.gif)
 
-### Tag Image Fallback
+### Image enhancements
+![Image enhancements screenshot](assets/screenshots/image-enhancements.gif)
+#### Tag Image Fallback
 - Post cards without a feature image automatically display the primary tag's image
 - Falls back gracefully to no image if neither exists
 
-### Post Card Images
+#### Post Card Images
 - Images displayed fully (no cropping) with white background fill
 - Works well with SVG/PNG assets
 
-### Feature Image Sizing
+#### Feature Image Sizing
 - Resized to 80% of content width, centered
 - Small images scale up to fit the container
 
