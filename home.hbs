@@ -3,6 +3,10 @@
 
 {{> "components/header" headerStyle=@custom.header_style}}
 
+{{#if @custom.show_tags_section}}
+    {{> "components/tags-section"}}
+{{/if}}
+
 {{#match @custom.header_style "!=" "Highlight"}}
     {{> "components/featured" showFeatured=@custom.show_featured_posts limit=4}}
 {{/match}}

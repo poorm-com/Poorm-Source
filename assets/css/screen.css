@@ -1406,6 +1406,87 @@ Search                         LOGO                    Login Subscribe
     background-color: #fff;
 }
 
+/* 8.5. Tags section
+/* ---------------------------------------------------------- */
+
+.gh-tags {
+    padding: 32px 0;
+}
+
+.gh-tags-inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.gh-tags-feed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gh-tags-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--color-border);
+    background-color: var(--background-color, #fff);
+    text-decoration: none;
+    color: var(--color-primary-text);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.gh-tags-item:hover {
+    border-color: var(--color-dark-border);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.gh-tags-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    color: var(--color-secondary-text);
+}
+
+.gh-tags-item-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.gh-tags-item-name {
+    letter-spacing: -0.01em;
+}
+
+.gh-tags-item-count {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-secondary-text);
+    padding-left: 2px;
+}
+
+@media (max-width: 768px) {
+    .gh-tags {
+        padding: 24px 0;
+    }
+
+    .gh-tags-feed {
+        gap: 8px;
+    }
+
+    .gh-tags-item {
+        padding: 6px 12px;
+        font-size: 1.3rem;
+    }
+}
+
 /* 9. CTA
 /* ---------------------------------------------------------- */
 
@@ -2152,6 +2233,244 @@ Search                         LOGO                    Login Subscribe
 
 .page-template .gh-footer {
     margin-top: 0;
+}
+
+/* 14.4. Portfolio page */
+
+.gh-portfolio-header {
+    margin: clamp(40px, 3.64vw + 25.45px, 72px) auto 32px;
+}
+
+.gh-portfolio-title {
+    font-size: clamp(3.4rem, 1.36vw + 2.85rem, 4.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+}
+
+.gh-portfolio-description {
+    margin-top: 12px;
+    font-size: clamp(1.7rem, 0.23vw + 1.61rem, 1.9rem);
+    line-height: 1.45;
+    color: var(--color-secondary-text);
+}
+
+.gh-portfolio-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.gh-portfolio-item {
+    border-top: 1px solid var(--color-border);
+}
+
+.gh-portfolio-item:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gh-portfolio-item-link {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.gh-portfolio-item-link:hover {
+    opacity: 0.7;
+}
+
+.gh-portfolio-item-image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.gh-portfolio-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gh-portfolio-item-title {
+    font-size: 2rem;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+}
+
+.gh-portfolio-item-excerpt {
+    margin-top: 6px;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--color-secondary-text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.gh-portfolio-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.gh-portfolio-item-period {
+    font-size: 1.2rem;
+    color: var(--color-secondary-text);
+}
+
+.gh-portfolio-tag {
+    font-size: 1.15rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background-color: var(--color-lighter-gray);
+    color: var(--color-secondary-text);
+}
+
+.gh-portfolio-item-link > svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-secondary-text);
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .gh-portfolio-item-link {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .gh-portfolio-item-image {
+        max-width: 100%;
+    }
+
+    .gh-portfolio-item-link > svg {
+        display: none;
+    }
+}
+
+/* 14.5. Series page */
+
+.gh-series-header {
+    margin: clamp(40px, 3.64vw + 25.45px, 72px) auto 32px;
+}
+
+.gh-series-title {
+    font-size: clamp(3.4rem, 1.36vw + 2.85rem, 4.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+}
+
+.gh-series-description {
+    margin-top: 12px;
+    font-size: clamp(1.7rem, 0.23vw + 1.61rem, 1.9rem);
+    line-height: 1.45;
+    color: var(--color-secondary-text);
+}
+
+.gh-series-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.gh-series-group {
+    border-top: 1px solid var(--color-border);
+    padding-top: 24px;
+}
+
+.gh-series-group-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.gh-series-group-title {
+    font-size: 2.4rem;
+    line-height: 1.3;
+    letter-spacing: -0.018em;
+}
+
+.gh-series-group-count {
+    font-size: 1.3rem;
+    color: var(--color-secondary-text);
+    white-space: nowrap;
+}
+
+.gh-series-group-description {
+    margin-top: 8px;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--color-secondary-text);
+}
+
+.gh-series-posts {
+    margin-top: 16px;
+    padding-left: 20px;
+    list-style: none;
+    counter-reset: series;
+}
+
+.gh-series-post {
+    counter-increment: series;
+    border-top: 1px solid var(--color-border);
+}
+
+.gh-series-post:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gh-series-post-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.gh-series-post-link:hover {
+    opacity: 0.7;
+}
+
+.gh-series-post-link::before {
+    content: counter(series) ".";
+    flex-shrink: 0;
+    width: 24px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-secondary-text);
+}
+
+.gh-series-post-title {
+    flex-grow: 1;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.gh-series-post-date {
+    flex-shrink: 0;
+    font-size: 1.3rem;
+    color: var(--color-secondary-text);
+}
+
+@media (max-width: 768px) {
+    .gh-series-group-header {
+        flex-direction: column;
+        gap: 4px;
+    }
 }
 
 /* 15. Content
