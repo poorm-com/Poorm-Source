@@ -1413,16 +1413,9 @@ Search                         LOGO                    Login Subscribe
     margin-top: 0;
 }
 
-.gh-container.gh-tags .gh-container-title {
-    display: block !important;
-}
 
 .gh-tags-feed {
     grid-column: 1 / -1;
-}
-
-
-.gh-tags-feed {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -1737,6 +1730,11 @@ Search                         LOGO                    Login Subscribe
 }
 
 .gh-header:is(.is-highlight, .is-magazine) ~ .gh-container.is-grid:not(.has-sidebar) :is(.gh-container-title, .gh-main, .gh-more) {
+    grid-column: 1 / -1;
+}
+
+.gh-container.gh-tags .gh-container-title {
+    display: block !important;
     grid-column: 1 / -1;
 }
 
