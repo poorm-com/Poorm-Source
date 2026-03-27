@@ -5,8 +5,6 @@
 
 <main class="gh-main">
 
-    <aside class="gh-toc"></aside>
-
     <article class="gh-article {{post_class}}">
 
         <header class="gh-article-header gh-canvas">
@@ -48,9 +46,12 @@
 
         </header>
 
-        <section class="gh-content gh-canvas is-body{{#if @custom.enable_drop_caps_on_posts}} drop-cap{{/if}}">
-            {{content}}
-        </section>
+        <div class="gh-content-wrapper">
+            <aside class="gh-toc"></aside>
+            <section class="gh-content gh-canvas is-body{{#if @custom.enable_drop_caps_on_posts}} drop-cap{{/if}}">
+                {{content}}
+            </section>
+        </div>
 
     </article>
 
@@ -65,7 +66,7 @@
 {{/post}}
 
 {{#if @custom.show_related_articles}}
-    {{#get "posts" include="authors" filter="id:-{{post.id}}+tag:-portfolio" limit="4" as |next|}}
+    {{#get "posts" include="authors,tags" filter="id:-{{post.id}}+tag:-portfolio" limit="4" as |next|}}
         {{#if next}}
             <section class="gh-container is-grid gh-outer">
                 <div class="gh-container-inner gh-inner">

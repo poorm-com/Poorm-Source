@@ -93,6 +93,11 @@
                 ],
                 "default": "Logo in the middle"
             },
+            "logo_color": {
+                "type": "color",
+                "default": "#888888",
+                "description": "Logo text color"
+            },
             "site_background_color": {
                 "type": "color",
                 "default": "#ffffff"
@@ -122,13 +127,10 @@
                 ],
                 "default": "Modern sans-serif"
             },
-            "signup_heading": {
-                "type": "text",
-                "description": "Used in your footer across your theme, defaults to site title when empty"
-            },
-            "signup_subheading": {
-                "type": "text",
-                "description": "Defaults to site description when empty"
+            "show_footer_legal": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show legal pages links (Privacy, Terms, etc.) in the footer"
             },
             "header_style": {
                 "type": "select",
@@ -161,6 +163,12 @@
                 "default": false,
                 "group": "homepage",
                 "visibility": "header_style:[Highlight, Magazine]"
+            },
+            "show_tags_section": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show tags section below the header on homepage",
+                "group": "homepage"
             },
             "post_feed_style": {
                 "type": "select",
