@@ -127,9 +127,10 @@
                 ],
                 "default": "Modern sans-serif"
             },
-            "signup_heading": {
-                "type": "text",
-                "description": "Used in your footer across your theme, defaults to site title when empty"
+            "show_footer_legal": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show legal pages links (Privacy, Terms, etc.) in the footer"
             },
             "header_style": {
                 "type": "select",

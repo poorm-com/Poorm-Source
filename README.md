@@ -38,8 +38,15 @@ A custom [Ghost](https://ghost.org/) theme based on [Source](https://github.com/
 - Adjustable via Ghost Admin: **Settings > Design > Site-wide > Logo color**
 - Default: `#888888`
 
+### Footer Legal Links
+- Links to Privacy Policy, Terms of Service, Cookie Policy, Disclaimer, Copyright Policy, Contact
+- Toggleable via Ghost Admin: **Settings > Design > Site-wide > Show footer legal**
+
 ### Other Changes
 - Removed subscribe CTA banner from homepage
+- Removed footer signup section
+- Reduced footer margin-top for tighter layout
+- List-style card wrapper uses responsive max-width (70%)
 - Updated `author.hbs` to use `primary_author` helper
 - Portfolio posts excluded from related articles
 

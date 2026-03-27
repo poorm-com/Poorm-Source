@@ -17,18 +17,15 @@
             </div>
         </div>
 
-        {{#if @site.members_enabled}}
-            {{#unless @member}}
-                <section class="gh-footer-signup">
-                    <h2 class="gh-footer-signup-header is-title">
-                        {{#if @custom.signup_heading}}{{@custom.signup_heading}}{{else}}{{@site.title}}{{/if}}
-                    </h2>
-                    <p class="gh-footer-signup-subhead is-body">
-                        {{@site.description}}
-                    </p>
-                    {{> "email-subscription" email_field_id="footer-email"}}
-                </section>
-            {{/unless}}
+        {{#if @custom.show_footer_legal}}
+            <nav class="gh-footer-legal">
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/terms/">Terms of Service</a>
+                <a href="/cookies/">Cookie Policy</a>
+                <a href="/disclaimer/">Disclaimer</a>
+                <a href="/copyright/">Copyright Policy</a>
+                <a href="/contact/">Contact</a>
+            </nav>
         {{/if}}
 
     </div>
